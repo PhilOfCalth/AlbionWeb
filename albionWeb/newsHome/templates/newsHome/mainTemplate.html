@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+    <meta charset="UTF-8">
+    <title>Albion RPG News</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'newsHome/newsHome.css' %}" />
+    <script src="{% static 'newsHome/jquery-3.3.1.min.js' %}" ></script>
+    <script src="{% static 'newsHome/jquery.waypoints.min.js' %}" ></script>
+    <script src="{% static 'newsHome/infinite.js' %}" ></script>
+    <script src="{% static 'newsHome/home.js' %}" ></script>
+
+</head>
+<body class="{% block 'body_style' %}{% endblock %}">
+    <div id="main" role="main">
+      <div class="container">
+          <div id="title"><div class="title_text">Albion RPG News</div></div>
+          <div class="subtitle">{% block 'subtitle' %}
+          {% endblock %}</div>
+          {% block 'body' %}
+          {% endblock %}
+      </div>
+    </div>
+</body>
+</html>
