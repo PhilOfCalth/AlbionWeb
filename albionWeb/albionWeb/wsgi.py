@@ -12,7 +12,7 @@ import os, sys
 sys.path.append('~/AlbionWeb/albionWeb')
 
 # add the virtualenv site-packages path to the sys.path
-sys.path.append('~/.local/lib/python3.6/site-packages')
+sys.path.append('/home/ec2-user/.local/lib/python3.6/site-packages/')
 
 from django.core.wsgi import get_wsgi_application
 
