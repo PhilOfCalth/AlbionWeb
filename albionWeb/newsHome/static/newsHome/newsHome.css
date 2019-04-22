@@ -98,3 +98,16 @@ body, html {
     height: 10px;
     width: 10px;
 }
+
+.infinite-more-div{
+    color: white;
+    text-align: center;
+    left: 30%;
+    width: 32%;
+    position: relative;
+    margin: 30px;
+    background-color: rgba(128,0,0, 0.9);
+    border-radius: 5px;
+    height: 30px;
+    box-shadow: 0px 0px 6px 6px rgba(128,0,0, 0.9);
+}

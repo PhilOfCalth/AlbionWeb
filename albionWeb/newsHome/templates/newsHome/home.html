@@ -9,21 +9,21 @@
 
     <div class="articles-wrapper infinite-container">
         {% for article in articles %}
-            <div class="article-wrapper infinite-item{% if articles.number > 1 %} opacity-zero{% endif %}">
-              <a class="articleLink" href="{{ article.MessageAttributes.link.StringValue }}" target="_blank">
-                  {% if None != article.MessageAttributes.image %}
+            <div class="article-wrapper infinite-item{% if 'article_timestamp' in request.GET %} opacity-zero{% endif %}">
+              <a class="articleLink" href="{{ articlelink }}" target="_blank">
+                  {% if None != article.image %}
                     <img id="image" alt="article image" class="article-img"
-                         src="{{ article.MessageAttributes.image.StringValue }}" />
+                         src="{{ article.image }}" />
                   {% endif %} {{ window.screen.height }}
                   <div class="mid-wrapper">
                     <div class="inner-wrapper" >
                       <h2 class="titleWrapper" >
-                          {{ article.MessageAttributes.title.StringValue }}
+                          {{ article.title }}
                       </h2>
                       <div class="subTitleWrapper" >
-                          {{ article.MessageAttributes.website.StringValue }}
-                          ({{ article.MessageAttributes.captured_date.StringValue }})</div>
-                      <div class="summaryWrapper" >{{ article.Body }}</div>
+                          {{ article.website }}
+                          ({{ article.captured_date }})</div>
+                      <div class="summaryWrapper" >{{ article.body }}</div>
                     </div>
                   </div>
                   <div class="ten-px-spacer"></div>
@@ -32,8 +32,8 @@
         {% endfor %}
     </div>
 
-    {% if articles.has_next %}
-        <a class="infinite-more-link" href="?article_number={{ articles.next_page_number }}">More</a>
+    {% if last_timestamp != -1 %}
+        <a class="infinite-more-link" href="?article_timestamp={{ last_timestamp }}"><div class="infinite-more-div">Loading...</div></a>
     {% endif %}
 
     <script>
