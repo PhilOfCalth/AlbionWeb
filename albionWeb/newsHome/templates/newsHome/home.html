@@ -10,7 +10,7 @@
     <div class="articles-wrapper infinite-container">
         {% for article in articles %}
             <div class="article-wrapper infinite-item{% if 'article_timestamp' in request.GET %} opacity-zero{% endif %}">
-              <a class="articleLink" href="{{ articlelink }}" target="_blank">
+              <a class="articleLink" href="{{ article.link }}" target="_blank">
                   {% if None != article.image %}
                     <img id="image" alt="article image" class="article-img"
                          src="{{ article.image }}" />
