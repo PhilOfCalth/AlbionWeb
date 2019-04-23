@@ -5,8 +5,8 @@ from datetime import datetime
 
 class AmazonPublisher(object):
     def __init__(self):
-        asw_key = os.environ['albionWeb.userKey']
-        aws_pass = os.environ['albionWeb.userPass']
+        asw_key = os.environ['ALBION_USER_KEY']
+        aws_pass = os.environ['ALBION_USER_PASS']
 
         self.dynamo_table = boto3.resource('dynamodb', region_name='eu-west-1', aws_access_key_id=asw_key,
                                 aws_secret_access_key=aws_pass)\
