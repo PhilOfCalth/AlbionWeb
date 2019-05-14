@@ -2,17 +2,17 @@
 
 
 {% block 'body_style' %}staticTreesBack{% endblock %}
-{% block 'subtitle' %}News From Across The RPG Community{% endblock %}
+{% block 'subtitle' %}Archived RPG Community News{% endblock %}
 
 
 {% block 'body' %}
 
     <div class="articles-wrapper infinite-container">
-        <div class="menu-bar article-wrapper">
-            home | <a href="/archive" class="menu-link" >archive</a>
+        <div class="menu-bar archive-article article-wrapper">
+            <a href="/" class="menu-link" >home</a> | archive
         </div>
         {% for article in articles %}
-            <div class="article-wrapper infinite-item{% if 'article_timestamp' in request.GET %} opacity-zero{% endif %}">
+            <div class="archive-article article-wrapper infinite-item{% if 'article_timestamp' in request.GET %} opacity-zero{% endif %}">
               <a class="articleLink" href="{{ article.link }}" target="_blank">
                   {% if None != article.image %}
                     <img id="image" alt="article image" class="article-img"

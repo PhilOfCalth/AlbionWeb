@@ -45,10 +45,29 @@ body, html {
 .article-wrapper{
     margin: 30px;
     position: relative;
-    background-color: rgba(128,0,0, 0.9);;
+    background-color: rgba(128,0,0, 0.9);
     border-radius: 5px;
     min-height: 200px;
     box-shadow: 0px 0px 6px 6px rgba(128,0,0, 0.9);
+}
+
+.archive-article{
+    background-color: rgba(84,24,24, 0.9);
+    box-shadow: 0px 0px 6px 6px rgba(84,24,24, 0.9);
+}
+
+.menu-bar{
+    text-align: center;
+    min-height: 0px;
+    font-family: serif;
+    line-height: 1.4em;
+    color: white;
+    margin-bottom: 40px;
+    margin-top: 5px;
+}
+
+.menu-link{
+    color: white;
 }
 
 .opacity-zero{

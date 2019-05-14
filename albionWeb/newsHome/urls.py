@@ -21,4 +21,5 @@ app_name = "newsHome"
 
 urlpatterns = [
     path('', views.home_page, name="home_page"),
+    path('archive', views.archive_page, name="archive_page"),
 ]

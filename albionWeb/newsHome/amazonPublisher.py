@@ -1,7 +1,6 @@
 import boto3
 import os
-from boto3.dynamodb.conditions import Key, Attr
-from datetime import datetime
+from boto3.dynamodb.conditions import Key
 
 class AmazonPublisher(object):
     def __init__(self):
@@ -17,9 +16,9 @@ class AmazonPublisher(object):
             Item=item
         )
 
-    def retrieve_messages_from_dynamodb(self, start_time : int,quantity: int = 1) -> list:
+    def retrieve_messages_from_dynamodb(self, start_time : int, news_type: str = 'actualNews', quantity: int = 1) -> list:
 #        response = self.bck_dynamo_table.scan(FilterExpression=Key('date_published').lt(start_time), Limit=quantity)
-        response = self.dynamo_table.query(KeyConditionExpression=Key('type').eq("actualNews") & Key('date_published').lt(start_time),
+        response = self.dynamo_table.query(KeyConditionExpression=Key('type').eq(news_type) & Key('date_published').lt(start_time),
                                            ScanIndexForward=False,
                                            Limit=quantity)
         items = response[u'Items']
